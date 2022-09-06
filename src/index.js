@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import 'semantic-ui-css/semantic.min.css';
 import SeasonDisplay from "./SeasonDisplay";
 
 class App extends React.Component {
@@ -15,7 +14,7 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         this.setState({ latitude: position.coords.latitude });
@@ -27,14 +26,14 @@ class App extends React.Component {
   }
 
   render() {
-      if(this.state.errorMessage && !this.state.latitude){
-          return <div>Error: {this.state.errorMessage}</div>
-      }
-      if(!this.state.errorMessage && this.state.latitude){
-        return <SeasonDisplay latitude={this.state.latitude}/>
-      }else{
-        return <div>Loading...</div>
-      }
+    if (this.state.errorMessage && !this.state.latitude) {
+      return <div>Error: {this.state.errorMessage}</div>;
+    }
+    if (!this.state.errorMessage && this.state.latitude) {
+      return <SeasonDisplay latitude={this.state.latitude} />;
+    } else {
+      return <div>Loading...</div>;
+    }
   }
 }
 

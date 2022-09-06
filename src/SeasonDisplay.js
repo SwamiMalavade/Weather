@@ -10,13 +10,10 @@ const getSeason = (lat, month) => {
 
 const SeasonDisplay = (props) => {
   const season = getSeason(props.lat, new Date().getMonth());
-  
-
   return (
     <div>
        <i className="bi bi-cloud-snow"></i>
         {season === "Winter" ? "Thandi vajti ahai" : "Bhauu garam hotay"}
-        
     </div>
   );
 };
